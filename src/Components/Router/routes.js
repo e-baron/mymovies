@@ -9,7 +9,7 @@ const routes = {
   '/': HomePage,
   '/view-movies': ViewMoviePage,
   '/add-movie': AddMoviePage,
-  '/login' : LoginPage,
+  '/login': LoginPage,
   '/register': RegisterPage,
   '/logout': Logout,
 };

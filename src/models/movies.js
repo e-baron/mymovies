@@ -2,7 +2,7 @@ import { getAuthenticatedUser } from '../utils/auths';
 
 const readAllMovies = async () => {
   try {
-    const response = await fetch('/api/films');
+    const response = await fetch(`${process.env.API_BASE_URL}/films`);
 
     if (!response.ok) {
       throw new Error(`readAllMovies:: fetch error : ${response.status} : ${response.statusText}`);
@@ -28,7 +28,7 @@ const addOneMovie = async (movie) => {
       },
     };
 
-    const response = await fetch('/api/films', options);
+    const response = await fetch(`${process.env.API_BASE_URL}/films`, options);
 
     if (!response.ok) {
       throw new Error(`addOneMovie :: fetch error : ${response.status} : ${response.statusText}`);
@@ -56,7 +56,7 @@ async function deleteOneMovie(id) {
       },
     };
 
-    const response = await fetch(`/api/films/${id}`, options);
+    const response = await fetch(`${process.env.API_BASE_URL}/films/${id}`, options);
 
     if (!response.ok) {
       throw new Error(`deleteOneFilm :: fetch error : ${response.status} : ${response.statusText}`);
@@ -84,7 +84,7 @@ async function updateOneMovie(id, newMovieData) {
       },
     };
 
-    const response = await fetch(`/api/films/${id}`, options); // fetch return a promise => we wait for the response
+    const response = await fetch(`${process.env.API_BASE_URL}/films/${id}`, options); // fetch return a promise => we wait for the response
 
     if (!response.ok) {
       throw new Error(
